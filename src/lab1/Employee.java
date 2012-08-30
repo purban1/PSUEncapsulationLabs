@@ -34,7 +34,7 @@ public class Employee {
     }
     
     // 
-    public void initializeNewEmployee(String cubeID){
+    public void assignCubical(String cubeID){
         meetWithHrForBenefitAndSalryInfo();
         meetDepartmentStaff();
         reviewDeptPolicies();

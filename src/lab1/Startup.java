@@ -15,7 +15,7 @@ public class Startup {
 //        employee.lastName = "Piper";
 //        employee.ssn = "333-1234";
         
-          employee.initializeNewEmployee("Cube 12");
+          employee.assignCubical("Cube 12");
         
 //        employee.meetDepartmentStaff();
 //        employee.meetWithHrForBenefitAndSalryInfo();
