@@ -16,6 +16,8 @@ public class GameCharacter {
     
     Scanner keyboard = new Scanner(System.in);
     
+    Game theGame = new Game();
+    
     public GameCharacter(){
         this.playerName = "";
     }
@@ -39,6 +41,8 @@ public class GameCharacter {
         // Setup validation here before passing to setter to 
         // make sure input is 'Male', 'Female'
         setplayerNumber(Integer.parseInt(input));
+        
+        theGame.chooseYourGame();
     }
 
     /**
