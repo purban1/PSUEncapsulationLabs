@@ -48,8 +48,8 @@ public class GameGUI {
     }
     
     public void confirmTheSetup(){
-        System.out.println("\nYour background color is set to " + this.getGameBackgroundColor());
-        System.out.println("The size of the gameboard is " + this.getGameBoardWidth() + " x " + this.getGameBoardHeight());
+        System.out.println("\nYour background color is set to " + this.getGameBackgroundColor() + ".");
+        System.out.println("The size of the gameboard is " + this.getGameBoardWidth() + " x " + this.getGameBoardHeight() + ".");
     }
     
     /**
@@ -77,7 +77,7 @@ public class GameGUI {
      * @param gameBoardWidth the gameBoardWidth to set
      */
     private void setGameBoardWidth(int gameBoardWidth) {
-        this.gameBoardWidth = 1024;
+        this.gameBoardWidth = gameBoardWidth;
     }
 
     /**
@@ -91,6 +91,6 @@ public class GameGUI {
      * @param gameBoardHeight the gameBoardHeight to set
      */
     private void setGameBoardHeight(int gameBoardHeight) {
-        this.gameBoardHeight = 768;
+        this.gameBoardHeight = gameBoardHeight;
     }
 }
