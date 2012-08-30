@@ -14,7 +14,6 @@ public class Employee {
     private String firstName;
     private String lastName;
     private String ssn;
-    private Date birthDate;
     boolean metWithHr;
     boolean metDeptStaff;
     boolean reviewedDeptPolicies;
@@ -22,7 +21,9 @@ public class Employee {
     private String cubeId;
 
     public Employee() {
-
+        this.firstName="";
+        this.lastName="";
+        this.ssn="";
     }
     
     // Added Constructor to add all employee details
@@ -67,7 +68,7 @@ public class Employee {
     }
 
     // Assume this must be performed 4th
-    public void moveIntoCubicle(String cubeId) {
+    private void moveIntoCubicle(String cubeId) {
         if(metWithHr && metDeptStaff && reviewedDeptPolicies) {
             this.cubeId = cubeId;
             this.movedIn = true;
