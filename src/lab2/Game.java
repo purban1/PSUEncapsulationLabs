@@ -41,6 +41,13 @@ public class Game {
             setGameChoice("Dice");
         }
         confirmGameChoice();
+        
+        /*
+         * Create the GameBoard by send the game chosen
+         */
+        GameBoard gameBrd = new GameBoard();
+        gameBrd.initializeTheGameBoard(getGameChoice());
+        
     }
     
     /**
