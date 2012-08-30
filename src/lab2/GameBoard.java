@@ -28,31 +28,34 @@ public class GameBoard {
         
         if (gameChosen.equals("Black Jack"))
         {
-            System.out.println("/nHow many decks do you want in the shoe?");
+            System.out.println("\nHow many decks do you want in the shoe?");
             userInput = keyboard.nextLine();
             //Validate the choice is > 0 and < 7 decks of cards
             this.setNumberOfDecks(userInput);
         }
         else if (gameChosen.equals("Tic Tac Toe"))
         {
-            System.out.println("/nDo you wish to be 'X' or 'O'?");
+            System.out.println("\nDo you wish to be 'X' or 'O'?");
             userInput = keyboard.nextLine();
             //Validate the choice before setting field to 'X' or 'O'
             this.setTicTacToeLetter(userInput);
         }
         else
         {
-            System.out.println("/nHow many dice will you be shaking?");
+            System.out.println("\nHow many dice will you be shaking?");
             userInput = keyboard.nextLine();
             //Validate the choice is > 0 and < 7 dice
             this.setNumberOfDice(userInput);
         }
         confirmTheSetupOfTheGame(gameChosen);
         
+        // Setup the GUI
+        GameGUI gui = new GameGUI();
+        gui.setUpGameGUI();
     }
     
     private void confirmTheSetupOfTheGame(String game){
-        System.out.println("/nYour game of " + game + " has been setup.");
+        System.out.println("\nYour game of " + game + " has been setup.");
     }
 
     /**
