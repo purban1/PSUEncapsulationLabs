@@ -11,27 +11,42 @@ import java.util.Date;
  * @version     1.01
  */
 public class Employee {
-    String firstName;
-    String lastName;
-    public String ssn;
-    public Date birthDate;
+    private String firstName;
+    private String lastName;
+    private String ssn;
+    private Date birthDate;
     boolean metWithHr;
     boolean metDeptStaff;
     boolean reviewedDeptPolicies;
     boolean movedIn;
-    String cubeId;
+    private String cubeId;
 
     public Employee() {
 
     }
-
+    
+    // Added Constructor to add all employee details
+    public Employee(String fName, String lName, String ssn) {
+        this.firstName = fName;
+        this.lastName = lName;
+        this.ssn = ssn;
+    }
+    
+    // 
+    public void initializeNewEmployee(String cubeID){
+        meetWithHrForBenefitAndSalryInfo();
+        meetDepartmentStaff();
+        reviewDeptPolicies();
+        moveIntoCubicle(cubeId);
+    }
+    
     // Assume this must be performed first
-    public void meetWithHrForBenefitAndSalryInfo() {
+    private void meetWithHrForBenefitAndSalryInfo() {
         metWithHr = true;
     }
 
     // Assume this is must be performed second
-    public void meetDepartmentStaff() {
+    private void meetDepartmentStaff() {
         if(metWithHr) {
             metDeptStaff = true;
         } else {
@@ -41,7 +56,7 @@ public class Employee {
     }
 
     // Assume this must be performed third
-    public void reviewDeptPolicies() {
+    private void reviewDeptPolicies() {
         if(metWithHr && metDeptStaff) {
             reviewedDeptPolicies = true;
         } else {
