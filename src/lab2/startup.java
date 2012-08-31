@@ -12,6 +12,12 @@ public class startup {
     public static void main(String[] args) {
     
         GameCharacter character = new GameCharacter();
+        
+        // Create the character and setup the game.
         character.setupGameCharacter();
+        
+        // Setup the GUI
+        GameGUI gui = new GameGUI();
+        gui.setUpGameGUI();
     }
 }

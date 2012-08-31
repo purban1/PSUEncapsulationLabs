@@ -49,9 +49,7 @@ public class GameBoard {
         }
         confirmTheSetupOfTheGame(gameChosen);
         
-        // Setup the GUI
-        GameGUI gui = new GameGUI();
-        gui.setUpGameGUI();
+        
     }
     
     private void confirmTheSetupOfTheGame(String game){

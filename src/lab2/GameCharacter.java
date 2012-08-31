@@ -12,7 +12,7 @@ import java.util.Scanner;
 public class GameCharacter {
     private String playerName;
     private String playerGender;
-    private int playerNumber;
+    private int playerSkillLevel;
     
     Scanner keyboard = new Scanner(System.in);
     
@@ -34,13 +34,18 @@ public class GameCharacter {
 
         System.out.println("What is the player gender?");
         input = keyboard.nextLine();
+        /* Setup validation here before passing to setter to 
+           make sure input is 'Male', 'Female'
+        */
         setPlayerGender(this.playerGender);
 
-        System.out.println("What is the player number?");
+        System.out.println("What is the skill level would you like to play at?");
+        System.out.println("( (1) Easy, (2) Novice, (3) Hard");
         input = keyboard.nextLine();
-        // Setup validation here before passing to setter to 
-        // make sure input is 'Male', 'Female'
-        setplayerNumber(Integer.parseInt(input));
+        /* Setup validation here before passing to setter to 
+           make sure input is 1, 2 or 3
+        */
+        setplayerSkillLevel(Integer.parseInt(input));
         
         theGame.chooseYourGame();
     }
@@ -74,16 +79,16 @@ public class GameCharacter {
     }
 
     /**
-     * @return the playerNumber
+     * @return the playerSkillLevel
      */
-    public int getplayerNumber() {
-        return playerNumber;
+    public int getplayerSkillLevel() {
+        return playerSkillLevel;
     }
 
     /**
-     * @param playerNumber the playerNumber to set
+     * @param playerSkillLevel the playerSkillLevel to set
      */
-    private void setplayerNumber(int playerNumber) {
-        this.playerNumber = playerNumber;
+    private void setplayerSkillLevel(int playerSkillLevel) {
+        this.playerSkillLevel = playerSkillLevel;
     }
 }
