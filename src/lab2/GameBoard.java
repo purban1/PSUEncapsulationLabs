@@ -59,7 +59,7 @@ public class GameBoard {
     /**
      * @return the numberOfDice
      */
-    public String getNumberOfDice() {
+    private String getNumberOfDice() {
         return numberOfDice;
     }
 
@@ -73,7 +73,7 @@ public class GameBoard {
     /**
      * @return the numberOfDecks
      */
-    public String getNumberOfDecks() {
+    private String getNumberOfDecks() {
         return numberOfDecks;
     }
 
@@ -87,7 +87,7 @@ public class GameBoard {
     /**
      * @return the ticTacToeLetter
      */
-    public String getTicTacToeLetter() {
+    private String getTicTacToeLetter() {
         return ticTacToeLetter;
     }
 

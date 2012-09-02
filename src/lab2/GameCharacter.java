@@ -16,8 +16,6 @@ public class GameCharacter {
     
     Scanner keyboard = new Scanner(System.in);
     
-    Game theGame = new Game();
-    
     public GameCharacter(){
         this.playerName = "";
     }
@@ -28,7 +26,7 @@ public class GameCharacter {
     public void setupGameCharacter(){
         String input;
         
-        System.out.println("What is the player name?");
+        System.out.println("\nWhat is the player name?");
         input = keyboard.nextLine();
         setPlayerName(this.playerName);
 
@@ -46,14 +44,12 @@ public class GameCharacter {
            make sure input is 1, 2 or 3
         */
         setplayerSkillLevel(Integer.parseInt(input));
-        
-        theGame.chooseYourGame();
     }
 
     /**
      * @return the playerName
      */
-    public String getPlayerName() {
+    private String getPlayerName() {
         return playerName;
     }
 
@@ -67,7 +63,7 @@ public class GameCharacter {
     /**
      * @return the playerGender
      */
-    public String getPlayerGender() {
+    private String getPlayerGender() {
         return playerGender;
     }
 
@@ -81,7 +77,7 @@ public class GameCharacter {
     /**
      * @return the playerSkillLevel
      */
-    public int getplayerSkillLevel() {
+    private int getplayerSkillLevel() {
         return playerSkillLevel;
     }
 

@@ -17,6 +17,8 @@ public class Game {
     
     Scanner keyboard = new Scanner(System.in);
     
+    GameCharacter character = new GameCharacter();
+    
     public Game(){
         
     }
@@ -24,7 +26,7 @@ public class Game {
     public void chooseYourGame(){
         String gameChoice;
         
-        System.out.println("\nWould you like to play Blackjack (B), Tic Tac Toe (T)" +
+        System.out.println("Would you like to play Blackjack (B), Tic Tac Toe (T)" +
                 " or Dice (D)");
         gameChoice = keyboard.nextLine().toUpperCase();
         // include validators for choise and set appropriate boolean value for game choosen
@@ -42,11 +44,17 @@ public class Game {
         }
         confirmGameChoice();
         
+        
         /*
          * Create the GameBoard by send the game chosen
          */
         GameBoard gameBrd = new GameBoard();
         gameBrd.initializeTheGameBoard(getGameChoice());
+        
+        /*
+         * Setup the Game Character
+         */
+        character.setupGameCharacter();
         
     }
     
@@ -74,28 +82,28 @@ public class Game {
     /**
      * @return the typeBlackjack
      */
-    public boolean isTypeBlackjack() {
+    private boolean isTypeBlackjack() {
         return typeBlackjack;
     }
 
     /**
      * @return the typeTicTacToe
      */
-    public boolean isTypeTicTacToe() {
+    private boolean isTypeTicTacToe() {
         return typeTicTacToe;
     }
 
     /**
      * @return the typeDice
      */
-    public boolean isTypeDice() {
+    private boolean isTypeDice() {
         return typeDice;
     }
     
      /**
      * @return the gameChoice
      */
-    public String getGameChoice() {
+    private String getGameChoice() {
         return gameChoice;
     }
 

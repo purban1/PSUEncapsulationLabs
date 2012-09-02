@@ -47,7 +47,7 @@ public class GameGUI {
         confirmTheSetup();
     }
     
-    public void confirmTheSetup(){
+    private void confirmTheSetup(){
         System.out.println("\nYour background color is set to " + this.getGameBackgroundColor() + ".");
         System.out.println("The size of the gameboard is " + this.getGameBoardWidth() + " x " + this.getGameBoardHeight() + ".");
     }
@@ -55,7 +55,7 @@ public class GameGUI {
     /**
      * @return the gameBackgroundColor
      */
-    public String getGameBackgroundColor() {
+    private String getGameBackgroundColor() {
         return gameBackgroundColor;
     }
 
@@ -69,7 +69,7 @@ public class GameGUI {
     /**
      * @return the gameBoardWidth
      */
-    public int getGameBoardWidth() {
+    private int getGameBoardWidth() {
         return gameBoardWidth;
     }
 
@@ -83,7 +83,7 @@ public class GameGUI {
     /**
      * @return the gameBoardHeight
      */
-    public int getGameBoardHeight() {
+    private int getGameBoardHeight() {
         return gameBoardHeight;
     }
 
