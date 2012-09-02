@@ -61,56 +61,56 @@ public class Game {
     /**
      * @param typeBlackjack the typeBlackjack to set
      */
-    private void setTypeBlackjack(boolean typeBlackjack) {
+    public void setTypeBlackjack(boolean typeBlackjack) {
         this.typeBlackjack = typeBlackjack;
     }
 
     /**
      * @param typeTicTacToe the typeTicTacToe to set
      */
-    private void setTypeTicTacToe(boolean typeTicTacToe) {
+    public void setTypeTicTacToe(boolean typeTicTacToe) {
         this.typeTicTacToe = typeTicTacToe;
     }
 
     /**
      * @param typeDice the typeDice to set
      */
-    private void setTypeDice(boolean typeDice) {
+    public void setTypeDice(boolean typeDice) {
         this.typeDice = typeDice;
     }
 
     /**
      * @return the typeBlackjack
      */
-    private boolean isTypeBlackjack() {
+    public boolean isTypeBlackjack() {
         return typeBlackjack;
     }
 
     /**
      * @return the typeTicTacToe
      */
-    private boolean isTypeTicTacToe() {
+    public boolean isTypeTicTacToe() {
         return typeTicTacToe;
     }
 
     /**
      * @return the typeDice
      */
-    private boolean isTypeDice() {
+    public boolean isTypeDice() {
         return typeDice;
     }
     
      /**
      * @return the gameChoice
      */
-    private String getGameChoice() {
+    public String getGameChoice() {
         return gameChoice;
     }
 
     /**
      * @param gameChoice the gameChoice to set
      */
-    private void setGameChoice(String gameChoice) {
+    public void setGameChoice(String gameChoice) {
         this.gameChoice = gameChoice;
     }
     

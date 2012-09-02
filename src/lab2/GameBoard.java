@@ -59,42 +59,42 @@ public class GameBoard {
     /**
      * @return the numberOfDice
      */
-    private String getNumberOfDice() {
+    public String getNumberOfDice() {
         return numberOfDice;
     }
 
     /**
      * @param numberOfDice the numberOfDice to set
      */
-    private void setNumberOfDice(String numberOfDice) {
+    public void setNumberOfDice(String numberOfDice) {
         this.numberOfDice = numberOfDice;
     }
 
     /**
      * @return the numberOfDecks
      */
-    private String getNumberOfDecks() {
+    public String getNumberOfDecks() {
         return numberOfDecks;
     }
 
     /**
      * @param numberOfDecks the numberOfDecks to set
      */
-    private void setNumberOfDecks(String numberOfDecks) {
+    public void setNumberOfDecks(String numberOfDecks) {
         this.numberOfDecks = numberOfDecks;
     }
 
     /**
      * @return the ticTacToeLetter
      */
-    private String getTicTacToeLetter() {
+    public String getTicTacToeLetter() {
         return ticTacToeLetter;
     }
 
     /**
      * @param ticTacToeLetter the ticTacToeLetter to set
      */
-    private void setTicTacToeLetter(String ticTacToeLetter) {
+    public void setTicTacToeLetter(String ticTacToeLetter) {
         this.ticTacToeLetter = ticTacToeLetter;
     }
 

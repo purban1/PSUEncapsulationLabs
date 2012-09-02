@@ -49,42 +49,42 @@ public class GameCharacter {
     /**
      * @return the playerName
      */
-    private String getPlayerName() {
+    public String getPlayerName() {
         return playerName;
     }
 
     /**
      * @param playerName the playerName to set
      */
-    private void setPlayerName(String playerName) {
+    public void setPlayerName(String playerName) {
         this.playerName = playerName;
     }
 
     /**
      * @return the playerGender
      */
-    private String getPlayerGender() {
+    public String getPlayerGender() {
         return playerGender;
     }
 
     /**
      * @param playerGender the playerGender to set
      */
-    private void setPlayerGender(String playerGender) {
+    public void setPlayerGender(String playerGender) {
         this.playerGender = playerGender;
     }
 
     /**
      * @return the playerSkillLevel
      */
-    private int getplayerSkillLevel() {
+    public int getplayerSkillLevel() {
         return playerSkillLevel;
     }
 
     /**
      * @param playerSkillLevel the playerSkillLevel to set
      */
-    private void setplayerSkillLevel(int playerSkillLevel) {
+    public void setplayerSkillLevel(int playerSkillLevel) {
         this.playerSkillLevel = playerSkillLevel;
     }
 }

@@ -55,42 +55,42 @@ public class GameGUI {
     /**
      * @return the gameBackgroundColor
      */
-    private String getGameBackgroundColor() {
+    public String getGameBackgroundColor() {
         return gameBackgroundColor;
     }
 
     /**
      * @param gameBackgroundColor the gameBackgroundColor to set
      */
-    private void setGameBackgroundColor(String gameBackgroundColor) {
+    public void setGameBackgroundColor(String gameBackgroundColor) {
         this.gameBackgroundColor = gameBackgroundColor;
     }
 
     /**
      * @return the gameBoardWidth
      */
-    private int getGameBoardWidth() {
+    public int getGameBoardWidth() {
         return gameBoardWidth;
     }
 
     /**
      * @param gameBoardWidth the gameBoardWidth to set
      */
-    private void setGameBoardWidth(int gameBoardWidth) {
+    public void setGameBoardWidth(int gameBoardWidth) {
         this.gameBoardWidth = gameBoardWidth;
     }
 
     /**
      * @return the gameBoardHeight
      */
-    private int getGameBoardHeight() {
+    public int getGameBoardHeight() {
         return gameBoardHeight;
     }
 
     /**
      * @param gameBoardHeight the gameBoardHeight to set
      */
-    private void setGameBoardHeight(int gameBoardHeight) {
+    public void setGameBoardHeight(int gameBoardHeight) {
         this.gameBoardHeight = gameBoardHeight;
     }
 }
