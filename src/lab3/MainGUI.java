@@ -28,10 +28,14 @@ public class MainGUI extends javax.swing.JFrame implements ActionListener {
     private String partDesc;
     private double partPrice;
 
-    private String[] partNums = new String[10];
-    private String[] partDescs = new String[10];
-    private double[] partPrices = new double[10];
-    private int emptyRow;
+//    private String[] partNums = new String[10];
+//    private String[] partDescs = new String[10];
+//    private double[] partPrices = new double[10];
+      private int emptyRow;
+    
+    
+    // Create DataStorage object
+    DataStorage dataStore = new DataStorage();
     
    
     /** Creates new form MainGUI */
@@ -285,10 +289,10 @@ public class MainGUI extends javax.swing.JFrame implements ActionListener {
             this.txtNewProdNo.requestFocus();
 
         } else {
-            partNums[emptyRow] = partNo;
-            partDescs[emptyRow] = partDesc;
-            partPrices[emptyRow] = partPrice;
-            this.emptyRow += 1;
+            dataStore.setPartNums(partNo);
+            dataStore.setPartDescs(partDesc);
+            dataStore.setPartPrices(partPrice);
+            dataStore.incrementArrayValue();
         }
 
         clearEntryFields();
@@ -305,8 +309,8 @@ public class MainGUI extends javax.swing.JFrame implements ActionListener {
     private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
         String searchNum = txtSearchPartNo.getText();
         if (searchNum != null && searchNum.length() > 0) {
-            for (int i = 0; i < this.partNums.length; i++) {
-                if (searchNum.equalsIgnoreCase(partNums[i])) {
+            for (int i = 0; i < dataStore.getArrayLength(); i++) {
+                if (searchNum.equalsIgnoreCase(dataStore.getPartNums(i))) {
                     foundIndex = i;
                     break;
                 }
@@ -314,9 +318,9 @@ public class MainGUI extends javax.swing.JFrame implements ActionListener {
            if (foundIndex == NOT_FOUND) {
                 displayPartNumberNotFound();
            } else {
-                txtCurProdNo.setText(partNums[foundIndex]);
-                txtCurDesc.setText(partDescs[foundIndex]);
-                txtCurPrice.setText("" + partPrices[foundIndex]);
+                txtCurProdNo.setText(dataStore.getPartNums(foundIndex));
+                txtCurDesc.setText(dataStore.getPartDescs(foundIndex));
+                txtCurPrice.setText("" + dataStore.getPartPrices(foundIndex));
            }
         } else {
                 JOptionPane.showMessageDialog(this,
@@ -334,9 +338,9 @@ public class MainGUI extends javax.swing.JFrame implements ActionListener {
         if (foundIndex == NOT_FOUND) {
                 displayPartNumberNotFound();
         } else {
-            partNums[foundIndex] = txtCurProdNo.getText();
-            partDescs[foundIndex] = txtCurDesc.getText();
-            partPrices[foundIndex] = Double.parseDouble(txtCurPrice.getText());
+            dataStore.updatePartNumbers(foundIndex, txtCurProdNo.getText());
+            dataStore.updatePartDescription(foundIndex, txtCurDesc.getText());
+            dataStore.updatePartPrice(foundIndex, Double.parseDouble(txtCurPrice.getText()));
             displayList();
             JOptionPane.showMessageDialog(this,
                 "Part updated successfully!",
@@ -352,9 +356,9 @@ public class MainGUI extends javax.swing.JFrame implements ActionListener {
         NumberFormat nf = NumberFormat.getCurrencyInstance();
         listProducts.setText(""); // clear list
         listProducts.append("Part\tDesc\t\tPrice\n====\t====\t\t=====\n");
-        for (int i = 0 ; i < emptyRow; i++) {
-            String rLine = partNums[i] + "\t"
-                    + partDescs[i] + "\t\t" + nf.format(partPrices[i]) + "\n";
+        for (int i = 0 ; i < dataStore.getEmptyRow(); i++) {
+            String rLine = dataStore.getPartNums(i) + "\t"
+                    + dataStore.getPartDescs(i) + "\t\t" + nf.format(dataStore.getPartPrices(i)) + "\n";
             listProducts.append(rLine);
         }
     }
@@ -362,25 +366,8 @@ public class MainGUI extends javax.swing.JFrame implements ActionListener {
     // Sort by partNumber
     private void sortList() {
         // Only perform the sort if we have records
-        if(emptyRow > 0) {
-            // Bubble sort routine adapted from sample in text book...
-            // Make sure the operations are peformed on all 3 arrays!
-            for(int passNum = 1; passNum < emptyRow; passNum++) {
-                for(int i = 1; i <= emptyRow-passNum; i++) {
-                    String temp = "";
-                    temp += partPrices[i-1];
-                    partPrices[i-1] = partPrices[i];
-                    partPrices[i] = Double.parseDouble(temp);
-
-                    temp = partNums[i-1];
-                    partNums[i-1] = partNums[i];
-                    partNums[i] = temp;
-
-                    temp = partDescs[i-1];
-                    partDescs[i-1] = partDescs[i];
-                    partDescs[i] = temp;
-                }
-            }
+        if(dataStore.getEmptyRow() > 0) {
+            dataStore.sortTheData();
             // Once it's sorted, display in the list box
             displayList();
         } else {
