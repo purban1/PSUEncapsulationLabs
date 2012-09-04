@@ -14,10 +14,10 @@ public class Employee {
     private String firstName;
     private String lastName;
     private String ssn;
-    boolean metWithHr;
-    boolean metDeptStaff;
-    boolean reviewedDeptPolicies;
-    boolean movedIn;
+    private boolean metWithHr;
+    private boolean metDeptStaff;
+    private boolean reviewedDeptPolicies;
+    private boolean movedIn;
     private String cubeId;
 
     public Employee() {
@@ -34,7 +34,7 @@ public class Employee {
     }
     
     // 
-    public void assignCubical(String cubeID){
+    public void addHiredEmployee(String cubeID){
         meetWithHrForBenefitAndSalryInfo();
         meetDepartmentStaff();
         reviewDeptPolicies();

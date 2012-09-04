@@ -20,32 +20,6 @@ public class GameCharacter {
         this.playerName = "";
     }
 
-    /*
-     *  @param Setup all player information
-     */
-    public void setupGameCharacter(){
-        String input;
-        
-        System.out.println("\nWhat is the player name?");
-        input = keyboard.nextLine();
-        setPlayerName(this.playerName);
-
-        System.out.println("What is the player gender?");
-        input = keyboard.nextLine();
-        /* Setup validation here before passing to setter to 
-           make sure input is 'Male', 'Female'
-        */
-        setPlayerGender(this.playerGender);
-
-        System.out.println("What is the skill level would you like to play at?");
-        System.out.println("( (1) Easy, (2) Novice, (3) Hard");
-        input = keyboard.nextLine();
-        /* Setup validation here before passing to setter to 
-           make sure input is 1, 2 or 3
-        */
-        setplayerSkillLevel(Integer.parseInt(input));
-    }
-
     /**
      * @return the playerName
      */

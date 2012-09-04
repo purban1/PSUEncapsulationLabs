@@ -4,7 +4,6 @@
  */
 package lab2;
 
-import java.util.Scanner;
 /**
  *
  * @author Patrick
@@ -14,47 +13,8 @@ public class Game {
     private boolean typeTicTacToe = false;
     private boolean typeDice = false;
     private String gameChoice="";
-    
-    Scanner keyboard = new Scanner(System.in);
-    
-    GameCharacter character = new GameCharacter();
-    
+        
     public Game(){
-        
-    }
-    
-    public void chooseYourGame(){
-        String gameChoice;
-        
-        System.out.println("Would you like to play Blackjack (B), Tic Tac Toe (T)" +
-                " or Dice (D)");
-        gameChoice = keyboard.nextLine().toUpperCase();
-        // include validators for choise and set appropriate boolean value for game choosen
-        if (gameChoice.equals("B")){
-            setTypeBlackjack(true);
-            setGameChoice("Black Jack");
-        }
-        else if (gameChoice.equals("T")){
-            setTypeTicTacToe(true);       
-            setGameChoice("Tic Tac Toe");
-        }
-        else{
-            setTypeDice(true);
-            setGameChoice("Dice");
-        }
-        confirmGameChoice();
-        
-        
-        /*
-         * Create the GameBoard by send the game chosen
-         */
-        GameBoard gameBrd = new GameBoard();
-        gameBrd.initializeTheGameBoard(getGameChoice());
-        
-        /*
-         * Setup the Game Character
-         */
-        character.setupGameCharacter();
         
     }
     
@@ -112,11 +72,5 @@ public class Game {
      */
     public void setGameChoice(String gameChoice) {
         this.gameChoice = gameChoice;
-    }
-    
-    private void confirmGameChoice(){
-        System.out.println("You have choosen to play " + getGameChoice() + ".");
-    }
-
-   
+    } 
 }
