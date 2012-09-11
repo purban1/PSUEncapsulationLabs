@@ -15,11 +15,11 @@ public class GameGUI {
     private int gameBoardWidth;
     private int gameBoardHeight;
 
-    Scanner keyboard = new Scanner(System.in);
+    private Game yourGame = new Game();
+    private GameCharacter character = new GameCharacter();
+    private GameBoard gameBrd = new GameBoard();
     
-    Game yourGame = new Game();
-    GameCharacter character = new GameCharacter();
-    GameBoard gameBrd = new GameBoard();
+    Scanner keyboard = new Scanner(System.in);
     
     public GameGUI() {
         this.gameBackgroundColor="";
